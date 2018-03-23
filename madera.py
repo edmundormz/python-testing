@@ -52,6 +52,7 @@ def aserrio(ancho, alto, largo, clase):
         precio = volumen * 12
     if clase == 3:
         precio = volumen * 10
+
     nombre = '{0} x {1} x {2} {3}a, ${4}'.format(str(ancho), str(alto),
                                                  str(largo), str(clase),
                                                  str(precio))
