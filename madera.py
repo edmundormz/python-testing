@@ -13,8 +13,15 @@ def troncos():
     pass
 
 
-def celulosas():
-    pass
+def celulosas(producto, ancho, largo, alto):
+    volumen = ancho * largo * alto
+    if producto == "astilla":
+        precio = volumen * 240
+    elif producto == "aserrin":
+        precio = volumen * 180
+    else:
+        return "Producto incorrecto"
+    return volumen, precio
 
 
 if __name__ == "__main__":
