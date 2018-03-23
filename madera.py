@@ -1,4 +1,5 @@
 import sys
+import math
 
 
 def aserrio(ancho, alto, largo, clase):
@@ -39,11 +40,23 @@ def raja(ancho, largo, altos):
 	alto = alto/len(altos)
 	volumen = ancho * alto * largo
 	precio = volumen * 0.65 * 320
-	#TODO(Edmundo): fix precio to use two decimals
+	# TODO(Edmundo): fix precio to use two decimals
 	return volumen, precio
 
-def troncos():
-    pass
+def troncos(diametro, longitud, piezas=1):
+	"""
+	Calcula el volumen de troncos de madera
+	:param diametro: diametro de la pieza, en centimetros
+	:param longitud: longitud de la pieza, en metros
+	:param piezas: cantidad de piezas que comparten diametro y longitud para
+	calcular sus volumenes
+	:return: volumen del total de troncos calculados
+	"""
+	radio_metros = (float(diametro)/100)/2
+	area = math.pi * (radio_metros**2)
+	volumen =  area * longitud * piezas
+	vol_str = "{0:.3f}".format(volumen)
+	return float(vol_str)
 
 
 def celulosas(producto, ancho, largo, alto):
