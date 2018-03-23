@@ -23,9 +23,24 @@ def aserrio(ancho, alto, largo, clase):
                                                  str(precio))
     return nombre
 
-def raja():
-    pass
+def raja(ancho, largo, altos):
+	"""
+	Calcula el volumen de una carga de raja, promediando 3 medidas de la
+	altura y usando un factor de conversion
 
+	:param ancho: ancho de la carga, en metros
+	:param largo: largo de la carga, en metros
+	:param altos: lista con n alturas, en metros
+	:return: tupla con volumen de carga y precio de la misma
+	"""
+	alto = 0
+	for a in altos:
+		alto += a
+	alto = alto/len(altos)
+	volumen = ancho * alto * largo
+	precio = volumen * 0.65 * 320
+	#TODO(Edmundo): fix precio to use two decimals
+	return volumen, precio
 
 def troncos():
     pass
